@@ -24,4 +24,8 @@ public class PortfolioService {
     public void removeStockFromPortfolio(Long portfolioId) {
         portfolioRepository.deleteById(portfolioId);
     }
+    
+    public Portfolio addOrUpdatePortfolio(Portfolio portfolio) {
+        return portfolioRepository.save(portfolio);
+    }
 }

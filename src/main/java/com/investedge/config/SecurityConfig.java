@@ -1,5 +1,6 @@
 package com.investedge.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;

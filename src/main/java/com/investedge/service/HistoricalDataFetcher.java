@@ -6,7 +6,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class HistoricalDataFetcher {
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String API_KEY = "0BYLU7ZKC4UZFT79";  // Replace with your actual API key
+    private final String API_KEY = "6LYGO9T1LAOPEVSP";  
 
     public double[] getHistoricalPrices(String symbol) {
         String url = String.format("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=%s&apikey=%s&outputsize=full", symbol, API_KEY);

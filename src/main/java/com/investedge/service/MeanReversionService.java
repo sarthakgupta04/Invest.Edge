@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
-public class MeanReversionService {
+public class MeanReversionService implements RecommendationService {
 
     @Autowired
-    private HistoricalDataFetcher dataFetcher;
+    private StockService stockService;
 
+    @Override
     public String recommend(String symbol) {
-        double[] prices = dataFetcher.getHistoricalPrices(symbol);
+        double[] prices = stockService.getHistoricalPrices(symbol);
         double mean = Arrays.stream(prices).average().orElse(Double.NaN);
         double currentPrice = prices[prices.length - 1];  // Latest price
 
